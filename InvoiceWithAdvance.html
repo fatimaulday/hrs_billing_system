@@ -1,0 +1,726 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HRS INVOICE</title>
+    <meta charset="utf-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body > table {
+            table-layout:auto;
+            width: 100% ;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+            table.list {
+                width: 100%;
+            }
+
+        td, th {
+            border: 1px solid #009879;
+            text-align: left;
+            padding: 10px;
+        }
+       /*@page{
+         .ta  thead{
+            display:table-header-group
+        }
+           }  */      
+      /*  table {
+            table-paginate: paginate;
+        }*/
+       /*.tab-1  table {
+            -fs-table-paginate: paginate;
+        }*/
+
+
+    
+
+        @media print {
+            .container * {
+
+                visibility: visible;
+                
+            }
+
+            .tab-2 * {
+                visibility: hidden;
+                display:none;
+            }
+           
+        }
+        @media print {
+           .tab-1 thead {
+                display: table-header-group;
+            }
+        }
+        @media screen and (orientation:landscape) {
+            thead {
+                display: block;
+            }
+        }
+
+            .content-table {
+                border-collapse: collapse;
+                margin: 1px 0;
+                font-size: 0.8em;
+                min-width: 100px;
+                border-radius: 2px 2px 0 0;
+            }
+
+                .content-table tfoot tr:last-of-type {
+                    border-bottom: 5px solid #009879;
+                }
+
+                .content-table tr {
+                    text-align: left;
+                    border-bottom: 1px solid #009879;
+                }
+
+                .content-table td {
+                    padding: 7px 7px;
+                    text-transform: uppercase;
+                }
+
+                .content-table tr:hover {
+                    background-color: #CFF898;
+                    cursor: pointer;
+                    transition: all .25s ease-in-out;
+                }
+
+            input[type=text], input[type=number] {
+                text-transform: uppercase;
+                width: 100%;
+                padding: 5px 5px;
+                margin: 1px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit] {
+                width: 30%;
+                background-color: #ddd;
+                color: #000;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+
+
+            a {
+                cursor: pointer;
+                text-decoration: underline;
+                color: #0000ee;
+                margin-right: 4px;
+            }
+
+
+            .container {
+                overflow: hidden
+            }
+
+            .tab {
+                float: left;
+            }
+
+        .tab-2 {
+            margin-left: 50px;
+
+        }
+
+                .tab-2 input {
+                    display: block;
+                    margin-bottom: 10px
+                }
+
+            .tab-1 h1 {
+                font-size: 50px;
+            }
+
+        .button1 {
+            border-radius: 12px;
+            background-color: #400080;
+        }
+        .button2 {
+            border-radius: 12px;
+            background-color: #993366;
+        }
+        .button3 {
+            border-radius: 12px;
+            background-color: #e6e600;
+        }
+        .button4 {
+            border-radius: 50%;
+            background-color: #4CAF50;
+        }
+        .button5 {
+            border-radius: 12px;
+            background-color: #b30000;
+        }
+        .button6 {
+            border-radius: 12px;
+            background-color: #ff6600 ;
+        }
+
+        .button {
+            
+            border:thin;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 2px 2px;
+            cursor: pointer;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="tab tab-1" align="center">
+
+            <h1 align="center" style="color:#006400;" style="font-size: 100px;">HAMID R SHAIKH </h1>
+            <h4 align="center" style="color:red">
+                SPECIALIST IN:TRANSPORTATION OF VEGETABLE OIL & LUBRICATION OIL<br>
+                Plot no A-36 Sewri Coal Depot  opp Cafe Ulhas Hotel Sewri (East) Mum 400015<br>
+                Email:hamidshaikh0321@gmail.com<br>
+                MOB NO :8369867210/9222980257
+            </h4>
+            <p style="color:maroon" align="left">Bill No :<span contentEditable="true">00</span> </p>
+            <p align="left">Date:<span contentEditable="true" id="datetoday"></span></p>
+          <div id="exp-sup">  <p align="left">Exporter Name:<span contentEditable="true"> K N Resources Pvt Ltd.</span></p>
+    <p align="left">Supplier Name:<span contentEditable="true"> Baliraja Sakhar Karkhana Ltd.</span></p></div>
+            <pre><h2 align="left">M/S :<u contentEditable="true" style="color: blue">     A B C COMPANY PVT LTD.  </u></h2></pre><br>
+
+
+            <table id="table" border="1" class="content-table" align="left">
+                <tbody>
+                    <tr id="th-row">
+
+                        <th align="center">Date</th>
+                        <th align="left"  contentEditable="true">Lr_No</th>
+                        <th align="left">Vehicle_No</th>
+                        <th align="center">From</th>
+                        <th align="center">To</th>
+                        <th align="center">Weight</th>
+                        <th align="center"> Shortage</th>
+                        <th align="center">Rate</th>
+                        <th align="center">Amount</th>
+                        <th align="center">Advance</th>
+                        <th align="center">Balance</th>
+                    </tr>
+                    <tr></tr>
+
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row" colspan="8">Total</th>
+
+                        <td id="total_amount" contentEditable="true">0</td>
+                        <td id="total_advance"contentEditable="true">0</td>
+                        <td id="total_bal" contentEditable="true">0</td>
+                </tfoot>
+
+            </table>
+
+
+
+            <h3 align="center" style="color:blue">TOTAL     : <span id="ftotal" contentEditable="true">00</span>₹ Only/-</h3>
+            <p style="color:red">
+                Amount in Words:<span contentEditable="true" style="color:red" id="amtwords">
+                    Lakh   Thousand  Hundred  &
+                </span>
+            </p>
+            <p>NOTE: SERVICE TAX TO BE PAID BY CONSIGNEE </p>
+
+            <p align="left" contentEditable="true" id="extradetails">
+             Product: Industrial Fuel Oil <br>
+
+                Remarks : TDS Deducted @of 2% <br>
+
+                U.R.N NO :UDYAM-MH-18-0072415 <br>
+
+
+
+                GST UNDER REVERSE CHARGES <br>
+
+                Note:5%RCM payable by consignee on the value of invoice<br>
+
+                Note:Service Tax / GST to be deposited by party on paying freight<br>
+
+                Bank details:HAMID R SHAIKH<br>
+
+                Bank name :Axis Bank<br>
+
+                Account No : 915010045267677<br>
+
+                 IFSC CODE :UTIB0002769<br>
+
+                  PAN_NO : BAJPS7825P<br>
+
+                  Branch : Sewri Mumbai 400015.
+
+                 </p>
+            <img src="HRS_STAMP_SIGN.jpg" alt="stamp&sign" style="width:500px;height:200px;" align="right">
+
+        </div>
+
+
+        <div class="tab tab-2">
+
+            <div>
+                <label>Date</label>
+                <input type="date" name="date" id="dte">
+            </div>
+            <div>
+                <label>Lr_no</label>
+                <input type="text" name="date" id="lrn">
+            </div>
+            <div>
+                <label>Vehicle_no</label>
+                <input type="text" name="vehicle_no" id="vno">
+            </div>
+            <div>
+                <label>From</label>
+                <input type="text" name="from" id="f">
+            </div>
+            <div>
+                <label>To</label>
+                <input type="text" name="to" id="t">
+            </div>
+
+            <div>
+                <label>Weight</label>
+                <input type="text" name="weight" id="w">
+            </div>
+
+            <div>
+                <label>Shortage</label>
+                <input type="text" name="shortage" id="s">
+            </div>
+
+            <div>
+                <label>Rate</label>
+                <input type="text" name="number" id="r">
+            </div>
+
+            <div>
+                <label>Advance</label>
+                <input type="text" name="rate" id="ad">
+            </div>
+
+
+
+            <button onclick="addHtmlTableRow(); words();  " class="button button1">Add</button>
+            <button id="update" onclick="editHtmlTbleSelectedRow(); words();" class="button button2">Update</button>
+            <button onclick="removeSelectedRow(); words(); "class="button button3">Remove</button><br><br>
+            <button onclick="window.print();" class="button button4">PRINT</button><br><br>
+            <button onclick="hideANDseek();" class="button button5">HIDE/SHOW1</button>
+            <button onclick="hideANDseek2();" class="button button6">HIDE/SHOW2</button><br><br>
+            <!--<button onclick="deleteLr_No_Column()">delete Lr_No</button>-->
+
+        </div>
+    </div>
+
+ 
+    <script>
+
+        var rIndex,
+            table = document.getElementById("table");
+        var originalAmount;
+        var originalAdvance;
+        var bal = 0
+
+    
+        
+       
+        //code to get current date
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+         today = dd + '/' + mm + '/' + yyyy;
+        document.getElementById("datetoday").innerHTML = today;
+
+        // check the empty input
+        function checkEmptyInput() {
+            var isEmpty = false,
+                date = document.getElementById("dte").value;
+            lrn = document.getElementById("lrn").value;
+            vehicle_no = document.getElementById("vno").value;
+            from = document.getElementById("f").value;
+            to = document.getElementById("t").value;
+            weight = document.getElementById("w").value;
+            shortage = document.getElementById("s").value;
+            rate = document.getElementById("r").value;
+            advance = document.getElementById("ad").value;
+
+            if (date === "") {
+                alert("Date Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (vehicle_no === "") {
+                alert("Vehicle_No Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (from === "") {
+                alert("From Cannot Be Empty");
+                isEmpty = true;
+            }
+
+
+            else if (to === "") {
+                alert("TO Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (weight === "") {
+                alert("Weight Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (shortage === "") {
+                alert("Shortage Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (rate === "") {
+                alert("Rate Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (advance == '-') {
+                alert("Advance should be a number");
+                isEmpty = true;
+            }
+
+
+
+
+
+            return isEmpty;
+        }
+
+
+        function addHtmlTableRow() {
+
+            if (!checkEmptyInput()) {
+                var index = table.rows.length - 1;
+                var newRow = table.insertRow(index);
+                cell1 = newRow.insertCell(0);
+                cell2 = newRow.insertCell(1);
+                cell3 = newRow.insertCell(2);
+                cell4 = newRow.insertCell(3);
+                cell5 = newRow.insertCell(4);
+                cell6 = newRow.insertCell(5);
+                cell7 = newRow.insertCell(6);
+                cell8 = newRow.insertCell(7);
+                cell9 = newRow.insertCell(8)
+                cell10 = newRow.insertCell(9)
+                cell11 = newRow.insertCell(10)
+
+                // dd/mm/yyyy
+                date = document.getElementById("dte").value;
+                let text = date;
+                const myArray = text.split("");
+                day = myArray[8] + myArray[9];
+                month = myArray[4] + myArray[5] + myArray[6];
+                year = myArray[7] + myArray[0] + myArray[1] + myArray[2] + myArray[3];
+                dateNew = day + month + year
+
+
+                //if (advance == NaN) {
+                //    window.alert("Advance should be a number");
+
+                //}
+
+
+
+
+                vehicle_no = document.getElementById("vno").value;
+                lrn = document.getElementById("lrn").value;
+                from = document.getElementById("f").value;
+                to = document.getElementById("t").value;
+                weight = document.getElementById("w").value;
+                shortage = document.getElementById("s").value;
+                rate = document.getElementById("r").value;
+                amount = document.getElementById("total_amount").innerText;
+                advance = document.getElementById("ad").value;
+                addBalance = document.getElementById("total_bal").innerText;
+                // console.log(amount);
+                a = parseFloat(weight);
+                b = parseFloat(rate);
+                total = parseFloat(amount);
+                c = a * b;
+                d = parseFloat((c).toFixed(2));
+                /*console.log(d);*/
+                //code to get balance after subtracting from amount
+                ad = parseFloat(advance);
+                x = d - ad;
+                balance = parseFloat((x).toFixed(2));
+
+                cell1.innerHTML = dateNew;
+                cell2.innerHTML = lrn;
+                cell3.innerHTML = vehicle_no;
+                cell4.innerHTML = from;
+                cell5.innerHTML = to;
+                cell6.innerHTML = weight;
+                cell7.innerHTML = shortage;
+                cell8.innerHTML = rate;
+                cell9.innerHTML = d;
+                cell10.innerHTML = advance;
+                cell11.innerHTML = balance;
+
+
+                sum = (d + total).toFixed(2);
+                addBal = parseFloat(addBalance);
+                total_bal = (addBal + balance).toFixed(2);
+                document.getElementById("total_amount").innerHTML = sum;
+                document.getElementById("total_bal").innerHTML = total_bal;
+                document.getElementById("ftotal").innerHTML = total_bal;
+
+
+                formReset();
+
+                selectedRowToInput();
+            }
+        }
+
+
+        function selectedRowToInput() {
+
+            for (var i = 1; i < table.rows.length - 1; i++) {
+                table.rows[i].onclick = function () {
+                    rIndex = this.rowIndex;
+
+                    let text = this.cells[0].innerHTML;
+                    const myArray = text.split("");
+                    day = myArray[2] + myArray[0] + myArray[1];
+                    month = myArray[3] + myArray[4];
+                    year = myArray[6] + myArray[7] + myArray[8] + myArray[9] + myArray[5];
+                    dateNew = year + month + day;
+
+
+
+                    document.getElementById("dte").value = dateNew;
+                    document.getElementById("lrn").value = this.cells[1].innerHTML;
+                    document.getElementById("vno").value = this.cells[2].innerHTML;
+                    document.getElementById("f").value = this.cells[3].innerHTML;
+                    document.getElementById("t").value = this.cells[4].innerHTML;
+                    document.getElementById("w").value = this.cells[5].innerHTML;
+                    document.getElementById("s").value = this.cells[6].innerHTML;
+                    document.getElementById("r").value = this.cells[7].innerHTML;
+                    document.getElementById("ad").value = this.cells[9].innerHTML;
+
+
+
+
+                    /* weight = document.getElementById("w").value;*/
+                    weight = this.cells[5].innerHTML;
+                    /* rate = document.getElementById("r").value;*/
+                    rate = this.cells[7].innerHTML;
+                    a = parseFloat(weight);
+                    b = parseFloat(rate);
+                    originalAmount = a * b;
+                    console.log("ORIGINAL Amount=" + originalAmount);
+                    document.getElementById("update").disabled = false;
+                    ad = parseInt(document.getElementById("ad").value);
+                    adv = parseFloat(ad);
+                    originalBalance = originalAmount - adv;
+                    console.log("ORIGINAL balance=" + originalBalance);
+
+
+                };
+            }
+        }
+        selectedRowToInput();
+
+        function editHtmlTbleSelectedRow() {
+
+
+            var date = document.getElementById("dte").value;
+            lrn = document.getElementById("lrn").value;
+            vehicle_no = document.getElementById("vno").value;
+            from = document.getElementById("f").value;
+            to = document.getElementById("t").value;
+            weight = document.getElementById("w").value;
+            shortage = document.getElementById("s").value;
+            rate = document.getElementById("r").value;
+            amount = document.getElementById("total_amount").innerText;
+            console.log("Total amount=" + amount);
+            advance = document.getElementById("ad").value;
+            totalUpdatedBalance = document.getElementById("total_bal").innerText;
+            /*console.log(typeof totalUpdatedBalance);*/
+            console.log("Total balance=" + totalUpdatedBalance);
+
+            a = parseFloat(weight);
+            b = parseFloat(rate);
+            f = a * b;
+
+            var editedAmount = parseFloat((f).toFixed(2));
+            advance1 = parseFloat(advance);
+            console.log("Edited amount=" + editedAmount);
+
+            newBal = (editedAmount - advance1).toFixed(2);
+            newBalance = parseFloat(newBal);
+            /*console.log(typeof newBalance);*/
+            console.log("Edited balance=" + newBalance);
+
+
+            let text = date;
+            const myArray = text.split("");
+            day = myArray[8] + myArray[9];
+            month = myArray[4] + myArray[5] + myArray[6];
+            year = myArray[7] + myArray[0] + myArray[1] + myArray[2] + myArray[3];
+            dateNew = day + month + year
+
+            document.getElementById("update").disabled = true;
+
+            if (!checkEmptyInput()) {
+
+                table.rows[rIndex].cells[0].innerHTML = dateNew;
+                table.rows[rIndex].cells[1].innerHTML = lrn;
+                table.rows[rIndex].cells[2].innerHTML = vehicle_no;
+                table.rows[rIndex].cells[3].innerHTML = from;
+                table.rows[rIndex].cells[4].innerHTML = to;
+                table.rows[rIndex].cells[5].innerHTML = weight;
+                table.rows[rIndex].cells[6].innerHTML = shortage;
+                table.rows[rIndex].cells[7].innerHTML = rate;
+                table.rows[rIndex].cells[8].innerHTML = editedAmount;
+                table.rows[rIndex].cells[9].innerHTML = advance1;
+                table.rows[rIndex].cells[10].innerHTML = newBalance;
+
+                if (originalAmount !== editedAmount) {
+                    var output = (amount - originalAmount + editedAmount).toFixed(2);
+                    document.getElementById("total_amount").innerHTML = output;
+                    console.log("Updated amount" + output);
+                }
+            /*  if (totalUpdatedBalance == NAN) {*/
+
+                //    document.getElementById("update").disabled = true;
+                //}
+                if (originalBalance !== newBalance) {
+                    output1 = totalUpdatedBalance - originalBalance + newBalance;
+
+                    output2 = output1.toFixed(2);
+                    console.log("updated balance=" + output2);
+                    console.log("______________________________________________________");
+                    document.getElementById("total_bal").innerHTML = output2;
+                    document.getElementById("ftotal").innerHTML = output2;
+                }
+                //else {
+                //     document.getElementById("total_bal").innerHTML = originalBalance;
+                //}
+
+            }
+
+        }
+
+
+        function removeSelectedRow() {
+
+
+
+            amountDel = table.rows[rIndex].cells[8].innerText;
+            amount = document.getElementById("total_amount").innerText;
+            a = (amount - amountDel).toFixed(2);
+            document.getElementById("total_amount").innerHTML = a;
+
+
+            balanceDel = table.rows[rIndex].cells[10].innerText;
+            totalBalance = document.getElementById("total_bal").innerText;
+            b = (totalBalance - balanceDel).toFixed(2);
+            document.getElementById("total_bal").innerHTML = b;
+            document.getElementById("ftotal").innerHTML = a - b;
+            table.deleteRow(rIndex);
+            formReset();
+
+
+
+        }
+        function formReset() {
+            document.getElementById("dte").value = "";
+            document.getElementById("lrn").value = "";
+            document.getElementById("vno").value = "";
+            document.getElementById("f").value = "";
+            document.getElementById("t").value = "";
+            document.getElementById("w").value = "";
+            document.getElementById("s").value = "";
+            document.getElementById("r").value = "";
+            document.getElementById("ad").value = "";
+        }
+
+
+       //code to get numbers converted to words
+       
+        function words() {
+           
+            document.getElementById('amtwords').innerHTML = inWords(document.getElementById("total_bal").innerText);
+        }
+        function inWords (totalRent) {
+           // console.log(totalRent);
+            var a = ['', 'One ', 'Two ', 'Three ', 'Four ', 'Five ', 'Six ', 'Seven ', 'Eight ', 'Nine ', 'Ten ', 'Eleven ', 'Twelve ', 'Thirteen ', 'Fourteen ', 'Fifteen ', 'Sixteen ', 'Seventeen ', 'Eighteen ', 'Nineteen '];
+            var b = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+            var number = parseFloat(totalRent).toFixed(2).split(".");
+            var num = parseInt(number[0]);
+            var digit = parseInt(number[1]);
+            //console.log(num);
+            if ((num.toString()).length > 9) return 'overflow';
+            var n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+            var d = ('00' + digit).substr(-2).match(/^(\d{2})$/);;
+            if (!n) return; var str = '';
+            str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'Crore ' : '';
+            str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'Lakh ' : '';
+            str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'Thousand ' : '';
+            str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'Hundred ' : '';
+            str += (n[5] != 0) ? (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'Rupees ' : '';
+            str += (d[1] != 0) ? ((str != '') ? "and " : '') + (a[Number(d[1])] || b[d[1][0]] + ' ' + a[d[1][1]]) + 'Paise ' : 'Only!';
+           // console.log(str);
+            return str;
+        }
+       
+      
+       
+        function hideANDseek() {
+            var x = document.getElementById("exp-sup");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+
+        }
+        function hideANDseek2() {
+            var x = document.getElementById("extradetails");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+
+        }
+
+     
+        
+
+
+    </script>
+
+</body>
+</html>
+
+
+
+
